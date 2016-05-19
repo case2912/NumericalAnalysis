@@ -9,7 +9,13 @@ public class Lesson05 {
 		while (1.0 + e != 1.0){
 			e = e /2.0;
 		}
+		
 		System.out.println(2.0 * e);
+		float f = 1;
+		while (1+ f != 1) {
+			f = f /2f;
+		}
+		System.out.println(2 * f);
 	}
 
 }
