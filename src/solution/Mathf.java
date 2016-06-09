@@ -27,9 +27,11 @@ public final class Mathf {
 		}
 		return temp;
 	}
-	public static boolean judge(double x, double[] array,double epsilon) {
+
+	public static boolean judge(double x, double[] array, double epsilon) {
 		return Math.abs(f(x, array)) > epsilon;
 	}
+
 	public static boolean judge(double x, double y, double epsilon) {
 		return Math.abs((y - x) / y) > epsilon;
 	}
