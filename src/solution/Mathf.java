@@ -2,9 +2,8 @@ package solution;
 
 public final class Mathf {
 
-	public static double[] initVec(int number) {
-		double[] array = new double[number];
-		return array;
+	public static double[] initVec(double... number) {
+		return number;
 	}
 
 	public static double initEpsilon(int order) {
