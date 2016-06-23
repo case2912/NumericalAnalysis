@@ -7,11 +7,11 @@ public final class Way {
 		while (Mathf.judge(x, array, epsilon)) {
 			x = x - Mathf.f(x, array) / Mathf.df(x, array);
 			count++;
-			System.out.printf("%.2e\n",Math.abs(x - 1.0));
+			System.out.printf("%.2e\n", Math.abs(x - 1.0));
 		}
 		Debug.printCount(count);
 		Debug.print(x);
-		//%.2e\n
+		// %.2e\n
 	}
 
 	public static void parallelChord(double x, double[] array, double epsilon) {
@@ -38,5 +38,25 @@ public final class Way {
 		}
 		Debug.printCount(count);
 		Debug.print(xk1);
+	}
+
+	public static void bisection(double a, double b, double[] array, double epsilon) {
+		double c = 0;
+		if (Mathf.f(a, array) * Mathf.f(b, array) > 0) {
+			System.out.println("NOT INIT");
+			return;
+		}
+		int count = 0;
+		while (Math.abs(b - a) / 2 > epsilon) {
+			c = (a + b) / 2;
+			if (Mathf.f(b, array) * Mathf.f(c, array) > 0) {
+				b = c;
+			} else {
+				a = c;
+			}
+			count++;
+		}
+		Debug.printCount(count);
+		Debug.print(c);
 	}
 }
